@@ -35,7 +35,7 @@ def _get_dataloader_from_dataset_configs(
     """Normalize a multiple dataloaders to a ZipDataloader or return single dataloader"""
     dataloaders = [cfg.get_dataloader(split) for cfg in configs]
     if len(dataloaders) > 1:
-        dataloaders = ZipDataloader(dataloaders)
+        return ZipDataloader(dataloaders)
     return dataloaders[0]
 
 
